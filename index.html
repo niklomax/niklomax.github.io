@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nik Lomax — Professor of Population Geography</title>
+  <meta name="description" content="Nik Lomax is Professor of Population Geography at the University of Leeds. Research on migration, spatial inequalities in health, microsimulation and smart data.">
+  <link rel="canonical" href="https://niklomax.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nik Lomax — Professor of Population Geography">
+  <meta property="og:description" content="Quantitative methods, spatial data and small-area models applied to migration, spatial inequalities in health, and the consequences of policy.">
+  <meta property="og:url" content="https://niklomax.com/">
+  <meta property="og:image" content="https://niklomax.com/headshot.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d1117'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='700' fill='%23c9a96e' text-anchor='middle'%3ENL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #0d1117;
+      --bg-card:   #161b22;
+      --bg-hover:  #1c2128;
+      --border:    #21262d;
+      --border-light: #30363d;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --accent:    #c9a96e;
+      --accent-dim: rgba(201,169,110,0.12);
+      --accent-border: rgba(201,169,110,0.3);
+      --done:      rgba(110,201,150,0.15);
+      --done-border: rgba(110,201,150,0.3);
+      --done-text: #6ec996;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem;
+      font-weight: 600; color: var(--accent); text-decoration: none; letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero { max-width: 1100px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 700;
+      line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1.2rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-subtitle {
+      color: var(--muted); font-size: 1.05rem; font-weight: 300;
+      line-height: 1.65; max-width: 620px; margin-bottom: 2rem;
+    }
+    .hero-subtitle strong { color: var(--text); font-weight: 500; }
+    .hero-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    .hero-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.8rem;
+      letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+      border-bottom: 1px solid var(--border-light); padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* SECTIONS */
+    .divider { max-width: 1100px; margin: 0 auto; padding: 0 2rem; border-top: 1px solid var(--border); }
+    section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600;
+      line-height: 1.2; margin-bottom: 2.5rem;
+    }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .about-prose p { color: var(--muted); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1.2rem; }
+    .about-prose p:last-child { margin-bottom: 0; }
+    .about-prose strong { color: var(--text); font-weight: 500; }
+    .about-themes { display: flex; flex-direction: column; gap: 1rem; }
+    .theme-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.2rem 1.4rem; transition: border-color 0.2s;
+    }
+    .theme-card:hover { border-color: var(--accent-border); }
+    .theme-card h4 {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      font-weight: 600; color: var(--text); margin-bottom: 0.4rem;
+    }
+    .theme-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    /* PUBLICATIONS */
+    #publications { border-top: 1px solid var(--border); }
+    .pub-controls {
+      display: flex; gap: 0.8rem; margin-bottom: 2rem;
+      flex-wrap: wrap; align-items: center;
+    }
+    .pub-search {
+      flex: 1; min-width: 220px; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.55rem 1rem; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 0.85rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    .pub-search::placeholder { color: var(--muted); }
+    .pub-search:focus { border-color: var(--accent-border); }
+    .filter-group { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .filter-btn {
+      background: transparent; border: 1px solid var(--border); border-radius: 4px;
+      padding: 0.4rem 0.85rem; color: var(--muted); font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--border-light); }
+    .filter-btn.active {
+      background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent);
+    }
+    .pub-count { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+    .pub-list { display: flex; flex-direction: column; }
+    .pub-item {
+      border-top: 1px solid var(--border);
+      padding: 1.4rem 0; cursor: pointer;
+    }
+    .pub-item:last-child { border-bottom: 1px solid var(--border); }
+    .pub-item.hidden { display: none; }
+    .pub-header { display: grid; grid-template-columns: 3.5rem 1fr auto; gap: 1rem; align-items: start; }
+    .pub-year {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem;
+      color: var(--accent); font-weight: 400; padding-top: 0.1rem;
+    }
+    .pub-title {
+      font-size: 0.95rem; font-weight: 500; color: var(--text);
+      line-height: 1.4; margin-bottom: 0.35rem; transition: color 0.2s;
+    }
+    .pub-item:hover .pub-title { color: var(--accent); }
+    .pub-journal { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+    .pub-authors { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+    .pub-type-badge {
+      display: inline-block; font-size: 0.66rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: var(--accent-dim); color: var(--accent);
+      border: 1px solid var(--accent-border); border-radius: 3px;
+      padding: 0.15rem 0.45rem; margin-top: 0.35rem;
+    }
+    .pub-type-badge.preprint {
+      background: rgba(130,160,220,0.1); color: #82a0dc;
+      border-color: rgba(130,160,220,0.3);
+    }
+    .pub-toggle {
+      width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%;
+      background: transparent; color: var(--muted); font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.1rem; transition: all 0.2s;
+    }
+    .pub-toggle:hover { border-color: var(--accent-border); color: var(--accent); }
+    .pub-item.open .pub-toggle { transform: rotate(45deg); border-color: var(--accent-border); color: var(--accent); }
+    .pub-body { display: none; margin-top: 1.2rem; padding-left: 4.5rem; }
+    .pub-item.open .pub-body { display: block; }
+    .pub-summary { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+    .pub-summary-block { margin-bottom: 1rem; }
+    .pub-summary-block:last-child { margin-bottom: 0; }
+    .pub-summary-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text); margin-bottom: 0.3rem;
+    }
+    .pub-doi {
+      display: inline-block; margin-top: 1rem; font-size: 0.75rem;
+      color: var(--accent); text-decoration: none; letter-spacing: 0.03em;
+      border-bottom: 1px solid var(--accent-border); padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .pub-doi:hover { border-color: var(--accent); }
+    .citation-block {
+      margin-top: 1.2rem; padding: 0.85rem 1rem;
+      background: rgba(201,169,110,0.05); border: 1px solid var(--border);
+      border-radius: 6px; display: flex; align-items: flex-start; gap: 0.9rem;
+    }
+    .citation-text {
+      flex: 1; font-size: 0.78rem; color: var(--muted);
+      line-height: 1.65; font-family: 'Inter', sans-serif; user-select: all;
+    }
+    .copy-btn {
+      flex-shrink: 0; background: transparent; border: 1px solid var(--border-light);
+      border-radius: 4px; padding: 0.3rem 0.75rem; color: var(--muted);
+      font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500;
+      cursor: pointer; white-space: nowrap; transition: all 0.2s; letter-spacing: 0.02em;
+    }
+    .copy-btn:hover { border-color: var(--accent-border); color: var(--accent); }
+    .copy-btn.copied { border-color: var(--done-border); color: var(--done-text); }
+
+    /* PROJECTS */
+    #projects { border-top: 1px solid var(--border); }
+    .project-filter { display: flex; gap: 0.4rem; margin-bottom: 2.5rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.8rem; transition: border-color 0.25s, transform 0.2s;
+    }
+    .project-card:hover { border-color: var(--accent-border); transform: translateY(-2px); }
+    .project-card.open { border-color: var(--accent-border); background: var(--bg-hover); }
+    .project-card.completed { opacity: 0.75; }
+    .project-card.completed:hover { opacity: 1; }
+    .project-card.proj-hidden { display: none; }
+    .project-status {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .project-status.active { color: var(--accent); }
+    .project-status.active::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); animation: pulse 2s infinite;
+    }
+    .project-status.completed { color: var(--done-text); }
+    .project-status.completed::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--done-text);
+    }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+    .project-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.12rem;
+      font-weight: 600; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .project-funder { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .project-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
+    .project-body {
+      display: none; margin-top: 1.2rem; padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+    .project-card.open .project-body { display: block; }
+    .project-detail { font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
+    .project-detail p { margin-bottom: 0.8rem; }
+    .project-detail p:last-child { margin-bottom: 0; }
+    .project-people { margin-top: 1rem; font-size: 0.78rem; color: var(--muted); }
+    .project-people span { color: var(--text); font-weight: 500; }
+    .project-link {
+      display: inline-block; margin-top: 1rem; font-size: 0.75rem;
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid var(--accent-border); padding-bottom: 1px;
+    }
+    .project-link:hover { border-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border); padding: 2.5rem 2rem;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer .foot-name {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--muted);
+    }
+    footer .foot-links { display: flex; gap: 1.5rem; }
+    footer .foot-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.78rem;
+      letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; transition: color 0.2s;
+    }
+    footer .foot-links a:hover { color: var(--accent); }
+
+    /* HERO PHOTO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-text { min-width: 0; }
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      width: 220px;
+    }
+    .hero-photo {
+      width: 220px;
+      height: 290px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+      filter: grayscale(100%);
+      opacity: 0.88;
+      display: block;
+      border: 1px solid var(--border);
+    }
+    .hero-photo-placeholder {
+      width: 220px;
+      height: 290px;
+      border-radius: 6px;
+      border: 1px dashed var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-align: center;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo-wrap { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .pub-header { grid-template-columns: 2.5rem 1fr auto; }
+      .pub-body { padding-left: 0; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">Nik Lomax</a>
+    <ul class="nav-links">
+      <li><a href="#about">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="top" class="hero">
+  <div class="hero-text">
+    <h1>Professor of<br><span>Population Geography</span></h1>
+    <p class="hero-subtitle">
+      <strong>University of Leeds.</strong> Quantitative methods, spatial data and small-area models applied to migration, spatial inequalities in health, and the consequences of policy.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:n.m.lomax@leeds.ac.uk">Email</a>
+      <a href="https://scholar.google.co.uk/citations?user=_hyC1xkAAAAJ" target="_blank">Google Scholar</a>
+      <a href="https://github.com/niklomax" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/niklomax" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="headshot.jpg" alt="Nik Lomax">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="section-label">About my research</div>
+  <div class="section-title">Spatial data and small-area models,<br>applied to people and place</div>
+  <div class="about-grid">
+    <div class="about-prose">
+      <p>I am a <strong>quantitative population geographer</strong>. I use spatial data, small-area models, large administrative, survey and 'smart' datasets to study how populations change and how opportunities and outcomes differ from place to place.</p>
+      <p><strong>Migration and residential mobility</strong> are a key focus of my work: who moves where, and how those flows reshape the demographic makeup of local areas over time. This sits alongside a wider interest in spatial inequality, particularly in health. Recent work has classified places by the inclusiveness of their local economies and tested how that relates to life expectancy and lifespan inequality, and has compared how these inequalities have widened across countries with different welfare systems.</p>
+      <p>A second strand is <strong>simulation</strong>. I build synthetic populations that represent real individuals and households at fine spatial scale, and use dynamic microsimulation and agent-based models to estimate how different policy assumptions play out for particular groups and geographies. Related work measures access to everyday services such as schools, transport and food outlets, and examines diet, physical activity and obesity across different environments.</p>
+      <p>Underpinning this research is a commitment to <strong>shared data products and open, reproducible methods</strong>. I create datasets and research infrastructure so that other researchers can use and extend them for a wide range of purposes. I also work with 'novel' data sources, often termed 'smart data', including consumer data, wearable sensors and mobile phone and app derived data, to understand behaviours in ways traditional sources cannot.</p>
+    </div>
+    <div class="about-themes">
+      <div class="theme-card">
+        <h4>Migration and residential mobility</h4>
+        <p>Who moves where, and how internal migration and mobility reshape the demographic makeup of local areas over time.</p>
+      </div>
+      <div class="theme-card">
+        <h4>Spatial inequality in health</h4>
+        <p>Classifying places by the inclusiveness of their local economies, and testing how that relates to life expectancy and lifespan inequality across different welfare systems.</p>
+      </div>
+      <div class="theme-card">
+        <h4>Simulation and synthetic populations</h4>
+        <p>Synthetic populations at fine spatial scale, with dynamic microsimulation and agent-based models of how policy plays out for particular groups and geographies.</p>
+      </div>
+      <div class="theme-card">
+        <h4>Open methods and smart data</h4>
+        <p>Shared data products and research infrastructure, plus consumer, wearable and mobile phone data to understand behaviours in ways traditional sources cannot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="section-label">Publications</div>
+  <div class="section-title">Articles, book chapters and preprints</div>
+  <div class="pub-controls">
+    <input class="pub-search" type="text" placeholder="Search by title, author or journal&hellip;" id="pubSearch">
+    <div class="filter-group" id="yearFilters"></div>
+    <span class="pub-count" id="pubCount"></span>
+  </div>
+  <div class="pub-list" id="pubList"></div>
+  <p style="margin-top:2rem; font-size:0.82rem; color:var(--muted);">
+    Full list also on <a href="https://scholar.google.co.uk/citations?user=_hyC1xkAAAAJ" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border);">Google Scholar &#8599;</a>
+  </p>
+</section>
+
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">Research projects</div>
+  <div class="project-filter filter-group" id="projectFilters">
+    <button class="filter-btn active" data-pfilter="all">All</button>
+    <button class="filter-btn" data-pfilter="active">Active</button>
+    <button class="filter-btn" data-pfilter="completed">Completed</button>
+  </div>
+  <div class="projects-grid" id="projectsGrid"></div>
+</section>
+
+<footer>
+  <div class="foot-name">Nik Lomax &middot; University of Leeds</div>
+  <div class="foot-links">
+    <a href="mailto:n.m.lomax@leeds.ac.uk">Email</a>
+    <a href="https://scholar.google.co.uk/citations?user=_hyC1xkAAAAJ" target="_blank">Scholar</a>
+    <a href="https://github.com/niklomax" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/niklomax" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+// Publications and projects are loaded from publications.json and projects.json.
+// Edit those files (see HOW_TO_UPDATE.md) — never this one.
+
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── PUBLICATIONS ──────────────────────────────────────────────────────────────
+function initPublications(PUBLICATIONS) {
+  const pubList   = document.getElementById('pubList');
+  const pubCount  = document.getElementById('pubCount');
+  const pubSearch = document.getElementById('pubSearch');
+  const yearFilters = document.getElementById('yearFilters');
+
+  const years = [...new Set(PUBLICATIONS.map(p => p.year))].sort((a,b) => b - a);
+  const total  = PUBLICATIONS.length;
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active'; allBtn.dataset.filter = 'all'; allBtn.textContent = 'All years';
+  yearFilters.appendChild(allBtn);
+  years.forEach(yr => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn'; btn.dataset.filter = String(yr); btn.textContent = yr;
+    yearFilters.appendChild(btn);
+  });
+
+  let activeYearFilter = 'all';
+
+  function buildJournalStr(p) {
+    let parts = [p.journal];
+    if (p.volume) parts.push(p.volume + (p.issue ? '(' + p.issue + ')' : ''));
+    if (p.pages)  parts.push(p.pages);
+    return parts.filter(Boolean).join(', ');
+  }
+
+  function formatCitation(p) {
+    let parts = [];
+    if (p.authors) parts.push(p.authors + ' (' + p.year + ').');
+    if (p.title)   parts.push(p.title + '.');
+    let source = p.journal || '';
+    if (p.volume) {
+      source += ', ' + p.volume;
+      if (p.issue) source += '(' + p.issue + ')';
+    }
+    if (p.pages) source += ', ' + p.pages;
+    if (source) parts.push(source + '.');
+    if (p.doi) parts.push('https://doi.org/' + p.doi);
+    return parts.join(' ');
+  }
+
+  function renderPubs() {
+    const q = pubSearch.value.toLowerCase().trim();
+    pubList.innerHTML = '';
+    let shown = 0;
+    PUBLICATIONS.forEach(p => {
+      const yearStr = String(p.year);
+      const yearOk  = activeYearFilter === 'all' || yearStr === activeYearFilter;
+      const searchOk = !q ||
+        (p.title   || '').toLowerCase().includes(q) ||
+        (p.authors || '').toLowerCase().includes(q) ||
+        (p.journal || '').toLowerCase().includes(q);
+      if (!yearOk || !searchOk) return;
+      shown++;
+      const isPreprint = (p.type || '').toLowerCase().includes('preprint') ||
+                         (p.journal || '').toLowerCase().includes('preprint') ||
+                         (p.journal || '').toLowerCase().includes('arxiv');
+      const badgeClass = isPreprint ? 'pub-type-badge preprint' : 'pub-type-badge';
+      const badgeLabel = isPreprint ? 'Preprint' : (p.type || 'Journal Article');
+      const journalStr = buildJournalStr(p);
+      const s = p.summary || {};
+      let summaryHtml = '';
+      if (s.background) summaryHtml += `<div class="pub-summary-block"><div class="pub-summary-label">Background</div><div>${esc(s.background)}</div></div>`;
+      if (s.findings)   summaryHtml += `<div class="pub-summary-block"><div class="pub-summary-label">Key findings</div><div>${esc(s.findings)}</div></div>`;
+      const citation = formatCitation(p);
+      const doiHtml = p.doi ? `<a class="pub-doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">DOI: ${esc(p.doi)} &#8599;</a>` : '';
+      const el = document.createElement('div');
+      el.className = 'pub-item';
+      el.innerHTML = `
+        <div class="pub-header">
+          <div class="pub-year">${esc(String(p.year))}</div>
+          <div class="pub-meta">
+            <div class="pub-title">${esc(p.title)}</div>
+            <div class="pub-journal">${esc(journalStr)}</div>
+            <div class="pub-authors">${esc(p.authors)}</div>
+            <span class="${badgeClass}">${badgeLabel}</span>
+          </div>
+          <button class="pub-toggle" aria-label="Expand">+</button>
+        </div>
+        <div class="pub-body">
+          <div class="pub-summary">${summaryHtml}</div>
+          ${doiHtml}
+          <div class="citation-block">
+            <span class="citation-text">${esc(citation)}</span>
+            <button class="copy-btn">Copy citation</button>
+          </div>
+        </div>`;
+      el.addEventListener('click', () => el.classList.toggle('open'));
+      el.querySelector('.pub-toggle').addEventListener('click', e => { e.stopPropagation(); el.classList.toggle('open'); });
+      el.querySelector('.copy-btn').addEventListener('click', e => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(citation).then(() => {
+          const btn = e.currentTarget;
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = 'Copy citation'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+      pubList.appendChild(el);
+    });
+    pubCount.textContent = `Showing ${shown} of ${total}`;
+  }
+
+  yearFilters.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#yearFilters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeYearFilter = btn.dataset.filter;
+    renderPubs();
+  });
+  pubSearch.addEventListener('input', renderPubs);
+  renderPubs();
+}
+
+// ── PROJECTS ─────────────────────────────────────────────────────────────────
+function initProjects(PROJECTS) {
+  const projectsGrid   = document.getElementById('projectsGrid');
+  const projectFilters = document.getElementById('projectFilters');
+  let activePFilter = 'all';
+
+  function renderProjects() {
+    projectsGrid.innerHTML = '';
+    PROJECTS.forEach(p => {
+      const show = activePFilter === 'all' || p.status === activePFilter;
+      const card = document.createElement('div');
+      card.className = 'project-card' + (p.status === 'completed' ? ' completed' : '') + (show ? '' : ' proj-hidden');
+      const detailHtml = (p.description || []).map(para => `<p>${esc(para)}</p>`).join('');
+      const yearsStr = p.start_year ? (p.start_year + '\u2013' + (p.end_year || '')) : '';
+      const statusLabel = (p.status === 'active' ? 'Active' : 'Completed') + (yearsStr ? ' \u00b7 ' + yearsStr : '');
+      card.innerHTML = `
+        <div class="project-status ${p.status}">${statusLabel}</div>
+        <h3>${esc(p.name)}</h3>
+        <div class="project-funder">${esc(p.funder)}</div>
+        <div class="project-desc">${esc(p.tagline)}</div>
+        <div class="project-body">
+          <div class="project-detail">${detailHtml}</div>
+          <div class="project-people"><span>Role:</span> ${esc(p.role)} &nbsp;&middot;&nbsp; <span>Partners:</span> ${esc(p.partners)}</div>
+          <a class="project-link" href="${esc(p.url)}" target="_blank" rel="noopener">Project website &#8599;</a>
+        </div>`;
+      card.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        card.classList.toggle('open');
+      });
+      projectsGrid.appendChild(card);
+    });
+  }
+
+  projectFilters.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#projectFilters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activePFilter = btn.dataset.pfilter;
+    document.querySelectorAll('.project-card').forEach(card => {
+      const status = card.querySelector('.project-status').className.includes('active') ? 'active' : 'completed';
+      card.classList.toggle('proj-hidden', activePFilter !== 'all' && status !== activePFilter);
+    });
+  });
+
+  renderProjects();
+}
+
+// ── LOAD ─────────────────────────────────────────────────────────────────────
+Promise.all([
+  fetch('publications.json').then(r => { if (!r.ok) throw new Error('publications.json'); return r.json(); }),
+  fetch('projects.json').then(r => { if (!r.ok) throw new Error('projects.json'); return r.json(); })
+]).then(([pubs, projects]) => {
+  initPublications(pubs);
+  initProjects(projects);
+}).catch(err => {
+  document.getElementById('pubList').innerHTML =
+    '<p style="padding:1rem 0;font-size:0.85rem;color:var(--muted);">Could not load ' + esc(err.message) +
+    '. If you are viewing this file locally, serve the folder over HTTP (e.g. <code>python3 -m http.server</code>) rather than opening it directly.</p>';
+});
+</script>
+</body>
+</html>

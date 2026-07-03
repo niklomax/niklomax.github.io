@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Healthy and Sustainable Places Data Service",
+    "short": "HASP",
+    "status": "active",
+    "funder": "Smart Data Research UK (UKRI)",
+    "url": "https://hasp.ac.uk/",
+    "tagline": "Smart data for understanding the health and sustainability of places.",
+    "role": "Director",
+    "start_year": 2024,
+    "end_year": null,
+    "description": [
+      "HASP curates and provides secure access to smart data for researchers studying mobility, food environments, lifestyle behaviours and health outcomes in place. It is part of the Smart Data Research UK family of data services.",
+      "The service works across three research themes — health, sustainability and place — negotiating data access agreements with data owners, supporting researchers in using diverse and high-quality datasets, and publishing open, research-ready data products for the wider community."
+    ]
+  },
+  {
+    "name": "Policy Modelling for Health",
+    "short": "PMfH",
+    "status": "active",
+    "funder": "UKRI (PHI UK)",
+    "url": "https://www.phiuk.org/policy-modelling-for-health",
+    "tagline": "Computer models to estimate how economic policies affect health.",
+    "role": "Lead: Synthetic Population",
+    "start_year": 2024,
+    "end_year": null,
+    "description": [
+      "Policy Modelling for Health develops computer models to estimate how planned policies would affect people's economic circumstances — income, wealth, work, pensions — and in turn their health. The aim is to give policymakers evidence on how different population groups and geographical areas are affected differently, so that policy design can improve outcomes.",
+      "My contribution is leading the synthetic population work, building the population base that feeds the consortium's dynamic microsimulation models of policy impact."
+    ]
+  },
+  {
+    "name": "Population projections, centralisation, and planning for an uncertain future",
+    "short": "Futurepop",
+    "status": "active",
+    "funder": "Research Council of Norway",
+    "url": "https://www.ssb.no/forskning/befolkning-og-offentlig-okonomi/befolkningsframskrivinger-sentralisering-og-planlegge-for-en-usikker-fremtid-futurepop",
+    "tagline": "Modelling population change to guide planning and policy.",
+    "role": "Co-Investigator: rural depopulation",
+    "start_year": 2025,
+    "end_year": null,
+    "description": [
+      "FuturePop aims to support public governance, planning and policy-making. This is achieved through an integrated three-part approach focused on further developing population projections, increasing understanding of the centralisation trend, and evaluating regional policy instruments, including rural/district policy.",
+      "A central focus of the project is to better understand a major population trend: centralisation and depopulation in rural districts. By analysing the significance of immigration, the functioning of local labour markets, and the dynamics between urban and rural areas, the project seeks to generate relevant knowledge about these trends, as well as outline the likely developments we face."
+    ]
+  },
+  {
+    "name": "Systems Science in Public Health and Helath Economics Research",
+    "short": "SIPHER",
+    "status": "completed",
+    "funder": "UK Prevention Research Partnership (UKPRP)",
+    "url": "https://www.gla.ac.uk/research/az/sipher/",
+    "tagline": "Working together to tackle health inequalities and improve the health of the public.",
+    "role": "Lead: Micro-modelling workstream",
+    "start_year": 2021,
+    "end_year": 2025,
+    "description": [
+      "SIPHER’s innovative systems science approach offered a powerful framework to explore the complex real world relationships and interdependencies of diverse policies that shape our health and wellbeing.",
+      "A major £5m research investment by UKPRP, the SIPHER Consortium was a collaboration of policy and academic experts working with practice partner organisations to create evidence-based products that influence public policy process."
+    ]
+  },
+  {
+    "name": "Consumer Data Research Centre",
+    "short": "CDRC",
+    "status": "completed",
+    "funder": "ESRC",
+    "url": "https://www.cdrc.ac.uk/",
+    "tagline": "National facility providing academic access to consumer data for the research community.",
+    "role": "Node Director (Leeds)",
+    "start_year": 2014,
+    "end_year": 2026,
+    "description": [
+      "The Consumer Data Research Centre was established to lead academic engagement between industry and the social sciences, and utilise consumer data for academic research purposes. ",
+      "We provide unique insight into a diverse range of societal and economic challenges, in collaboration with a wide range of consumer data providers."
+    ]
+  }
+]
