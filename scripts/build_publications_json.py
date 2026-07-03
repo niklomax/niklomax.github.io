@@ -1,6 +1,9 @@
 import os, json, re
 
-SRC = "/sessions/relaxed-charming-darwin/mnt/Claude Cowork/OUTPUTS/Paper summary"
+# Paths are relative to this script's location (website/scripts/),
+# so this works wherever the OUTPUTS folder lives.
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC  = os.path.normpath(os.path.join(HERE, "..", "..", "Paper summary"))
 
 def parse_md(path):
     with open(path, encoding="utf-8") as f:
@@ -75,7 +78,7 @@ for fn in sorted(os.listdir(SRC)):
 # sort newest first
 pubs.sort(key=lambda p: (p["year"] if isinstance(p["year"],int) else 0), reverse=True)
 
-out = "/sessions/relaxed-charming-darwin/mnt/outputs/publications.json"
+out = os.path.normpath(os.path.join(HERE, "..", "publications.json"))
 with open(out, "w", encoding="utf-8") as f:
     json.dump(pubs, f, indent=2, ensure_ascii=False)
 

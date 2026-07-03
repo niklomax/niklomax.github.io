@@ -1,6 +1,24 @@
 [
   {
     "year": 2026,
+    "type": "Editorial",
+    "title": "Advancing Spatial Health Inequalities Research: Innovations in Data, Methods, and Theory—Special Issue Introduction",
+    "authors": "Höhn, A., Heppenstall, A., & Lomax, N.",
+    "journal": "Geographical Analysis",
+    "volume": "58",
+    "issue": "3",
+    "pages": "e70051",
+    "doi": "10.1111/gean.70051",
+    "slug": "2026_advancing_spatial_health_inequalities_GeoAnalysis",
+    "summary": {
+      "background": "Inequalities in population health between and within areas remain a feature of societies across the world, and many are rooted in long-standing disparities in the distribution of and access to the resources that shape health. Decades of research and policy effort have not shifted them; some have widened. This editorial introduces a special issue that gathers innovations in data, methods and theory intended to deepen understanding of these persistent spatial inequalities, and sets out the common threads running through the contributions.",
+      "importance": "Spatial health inequalities research is increasingly interdisciplinary, drawing on spatial econometrics, health geography, demography and systems science. We frame the special issue around what these traditions share once combined: a recognition that place is partly a social and political construct, that coarse geographies obscure meaningful variation, and that causal claims are hard to sustain in spatial settings. Positioning the collection this way gives readers an honest account of where the field's methods can and cannot go.",
+      "methods": "As an editorial, we review eight contributions and draw out shared concerns rather than presenting new analysis. The papers span causal inference in spatial econometrics, machine-learning approaches to deprivation and pandemic preparedness, space–time clustering, unobserved heterogeneity, GIS-based accessibility modelling, welfare-state comparison and life-expectancy decomposition.",
+      "findings": "Causality is the recurring limitation: spatial interdependence violates assumptions central to causal identification, so consistency in causal language matters, and co-occurrence and mechanism can still be interpreted carefully without it. We also flag the collection's focus on high-income countries as a gap. Narrowing real-world inequalities, we argue, will depend on translating evidence into policy and political will."
+    }
+  },
+  {
+    "year": 2026,
     "type": "Journal Article",
     "title": "A multilevel analysis of pupils' travel distance to primary school: Simultaneously modelling origins and destinations",
     "authors": "Huang, H., Gould, M., Lomax, N., & Yang, J.",
