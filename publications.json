@@ -20,6 +20,24 @@
   {
     "year": 2026,
     "type": "Journal Article",
+    "title": "Calibrating a Global Trade Agent-Based Model with an HPC–ABC–SMC Framework",
+    "authors": "Li, K., Ge, J., Lomax, N., & Polhill, J. G.",
+    "journal": "Journal of Artificial Societies and Social Simulation",
+    "volume": "29",
+    "issue": "3",
+    "pages": "5",
+    "doi": "10.18564/jasss.6072",
+    "slug": "2026_global_trade_ABM_calibration_JASSS",
+    "summary": {
+      "background": "Agent-based models are well suited to systems of heterogeneous actors that produce system-level patterns, such as global trade, but fitting them to empirical data is computationally expensive. Bayesian calibration through Approximate Bayesian Computation with Sequential Monte Carlo (ABC-SMC) returns parameter uncertainty rather than a single best fit, yet most workflows couple the statistical sampler to the model through interface tools such as PyNetLogo or RNetLogo. That coupling adds serialisation overhead at every inference step and limits parallelisation on high-performance computing (HPC) clusters, so calibrating a computationally intensive model to real data stays out of reach for many applied modellers. This paper builds and tests a framework that separates simulation from inference, applied to a global food trade model.",
+      "importance": "A calibration method that returns full posterior distributions, rather than a single best-fit parameter set, lets modellers quantify how much confidence to place in each parameter, which matters when a model is used to inform policy analysis. The core idea, decoupling simulation from inference through a precomputed lookup table, is an architectural pattern that carries over to any simulation platform supporting batch execution, so the contribution is not specific to trade. For trade research, the calibrated model puts quantitative weight on how far current flows are shaped by historical links against endogenous partner search.",
+      "methods": "The proposed framework, HPC-ABC-SMC, splits each ABC-SMC generation into two stages. First, all required NetLogo simulations run as independent HPC tasks, with their outputs aggregated into a parameter–output lookup table. Second, ABC-SMC inference runs locally by querying that table, with no further calls to NetLogo. The decoupling removes repeated interface overhead and allows task-level parallelisation across simulation batches. We applied the framework to a global food trade model with three calibration parameters (weights on initial trade, endogenous trade and GDP per capita) across 8 to 10 generations, using FAO trade data covering all 97 commodity categories. Two objectives were calibrated separately: matching trade partners and matching trade volumes. Results were cross-validated against a genetic algorithm, and a sensitivity analysis assessed the influence of each parameter.",
+      "findings": "Decoupling simulation from inference gave up to a 42-fold reduction in wall-clock time relative to GUI-based single-core execution while preserving the statistical rigour of the calibration, and returned full posteriors with 95% credible intervals. The genetic algorithm's single best-fit solution for each objective fell inside the corresponding ABC-SMC credible interval, confirming the posterior estimates. The two objectives behaved differently: partner-matching converged to small parameter magnitudes with tight intervals, indicating that partner choice is governed mainly by endogenous search, whereas volume-matching required a much larger weight on historical trade links (posterior mean 18.29), giving quantitative support to path dependence in trade networks. GDP per capita weight was the most influential parameter, with strong nonlinear interactions across the three weights. Posterior means deviate by 20 to 45% from the earlier point calibration of Ge et al. (2021), and some literature values sit inside one objective's credible interval but outside the other's, which shows the value of uncertainty-aware calibration over single-point fitting. The paper is led by PhD student Kejian Li, whom Nik Lomax supervises as primary supervisor."
+    }
+  },
+  {
+    "year": 2026,
+    "type": "Journal Article",
     "title": "A multilevel analysis of pupils' travel distance to primary school: Simultaneously modelling origins and destinations",
     "authors": "Huang, H., Gould, M., Lomax, N., & Yang, J.",
     "journal": "Urban Studies",
